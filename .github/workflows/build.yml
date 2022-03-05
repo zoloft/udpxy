@@ -41,7 +41,7 @@ jobs:
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           TAGS="${IMAGE_ID}:${VERSION},${IMAGE_ID}:${SHORTREF}"
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          [ "$VERSION" == "main" ] && TAGS="$TAGS,${IMAGE_ID}:latest"
+          [ "$VERSION" == "master" ] && TAGS="$TAGS,${IMAGE_ID}:latest"
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           echo TAGS=$TAGS
