@@ -23,5 +23,5 @@ COPY --from=builder /tmp/udpxy-1.0.23-12/udpxrec /usr/local/bin/udpxrec
 
 EXPOSE 4022
 
-CMD ["/usr/local/bin/udpxy", "-T", "-p", "4022"]
+CMD ["/usr/local/bin/udpxy", "-S", "-c", "25", "-M", "300", "-T", "-p", "4022"]
 
